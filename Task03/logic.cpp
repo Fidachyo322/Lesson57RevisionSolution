@@ -14,14 +14,16 @@
 
 bool is_digits_count_odd(long long number) {
 
-	if (number > -10 && number < 10)
-	{
-		return number % 10  ;
+	if (number == 0) {
+		return 0;
 	}
 
-	int t = number % 10 == 0 ? 1 : 0;
-
-	return is_digits_count_odd(number) + t % 2 == 0 ? true : false;
+	if ((number % 10) / 10) {
+		return 1;
+	}
+	
+	return !is_digits_count_odd(number / 10);
 
 	
+
 }
